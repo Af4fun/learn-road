@@ -1,25 +1,28 @@
 ---
+title: KMP 匹配子串
 group:
-  title: js相关
+  title: 一些算法
 ---
 
-## KMP 算法
+- step1-生成前缀表:
 
-> (匹配字符串最大字串)
+举例子：
 
-#### 生成前缀表
-
-```
-const prefix_table = (p = "") => {
-  let n = p.length;
-  let prefix = new Array(n).fill();
-  prefix[0] = 0;
-  /**
+```js
+/** abac
    *  a    前缀 无 后缀 无 -> 0
       ab   前缀 a, 后缀 b -> 0
       aba  前缀 a，ab, 后缀 b, ba -> 0
       abac 前缀 a，ab, abc 后缀 b, bc, bcd -> 0
-   */
+      前缀表是[-1,0,0,0]
+  */
+```
+
+```js
+const prefix_table = (p = '') => {
+  let n = p.length;
+  let prefix = new Array(n).fill();
+  prefix[0] = 0;
   let len = 0;
   let i = 1;
   while (i < n) {
@@ -40,13 +43,12 @@ const prefix_table = (p = "") => {
   prefix.pop();
   return prefix;
 };
-
 ```
 
-#### 利用前缀表进行 KMP 算法
+- step2-利用前缀表匹配：
 
-```
-const kmp = (t = "", p = "") => {
+```js
+const kmp = (t = '', p = '') => {
   let prefix = prefix_table(p);
   let n = prefix.length;
   let m = t.length;

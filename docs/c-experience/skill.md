@@ -1,7 +1,7 @@
 ---
 title: 日常业务处理相关
 group:
-  title: js相关
+  title: 经验
 ---
 
 ## resource 的预下载使用
