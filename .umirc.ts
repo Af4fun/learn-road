@@ -1,8 +1,8 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: '学习之路',
+  title: 'Fun4fun',
   logo: '/images/logo.png',
-  outputPath: 'dist',
+  outputPath: 'docs-dist',
   // more config: https://d.umijs.org/config
 });

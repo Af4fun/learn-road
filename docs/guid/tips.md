@@ -1,4 +1,8 @@
-## jser 的日常
+---
+title: js 技巧
+group:
+  title: js相关
+---
 
 ### 1. 生成 n 进制的 m 位 随机数
 
