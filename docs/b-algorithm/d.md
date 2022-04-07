@@ -8,6 +8,8 @@ group:
 
 **定义**
 
+> 在几何学中，PIP（Point in Polygon）问题即判断一点在多边形的内部或外部。射线法（Ray casting algorithm）是一种判断点是否在多边形内部的一种简单方法。即从该点做一条射线，计算它跟多边形边界的交点个数，如果交点个数为奇数，那么点在多边形内部，否则点在多边形外部。
+
 ```ts
 interface Point {
   x: number;
