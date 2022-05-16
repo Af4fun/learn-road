@@ -16,10 +16,10 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-let l1 = new ListNode(0);
-l1.next = new ListNode(0);
-l1.next.next = new ListNode(0);
-l1.next.next.next = new ListNode(0);
+let l1 = new ListNode(1);
+l1.next = new ListNode(2);
+l1.next.next = new ListNode(3);
+l1.next.next.next = new ListNode(4);
 
 let l2 = new ListNode(5);
 l2.next = new ListNode(6);
@@ -62,4 +62,40 @@ const reverseListInt = (head, newHead) => {
 };
 
 reverseList2(a);
+```
+
+### 从链表尾部打印
+
+```js
+var helper = function (head, newHead) {
+  if (head === null) return;
+  let next = head.next;
+  head.next = newHead;
+  helper(next, head);
+  console.log(head.val);
+};
+
+helper(l1, undefined);
+```
+
+### 链表相交
+
+> pa 走到末尾 把 pa 指向 HB pb 走到末尾 把 pb 指向 HA； 都为 null 也是跳出 loop.
+
+```js
+/**
+ * @param { ListNode } headA
+ * @param { ListNode } headB
+ * @return { ListNode }
+ **/
+var getIntersectionNode = function (headA, headB) {
+  if (headA == null || headB == null) return null;
+  let pA = headA;
+  let pB = headB;
+  while (pA != pB) {
+    pA = pA == null ? headB : pA.next;
+    pB = pB == null ? headA : pB.next;
+  }
+  return pA;
+};
 ```

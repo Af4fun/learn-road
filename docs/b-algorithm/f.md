@@ -36,6 +36,12 @@ node3.left = node6;
 node3.right = node7;
 ```
 
+    中
+    /  \
+    左   右
+
+前序遍历：中，左，右 <br> 中序遍历：左，中，右 <br> 后序遍历：左，右，中
+
 ### 前序遍历
 
 ```js
@@ -50,9 +56,7 @@ function fn() {
     }
     let t = stack.pop();
     result.push(t.val);
-    if (t.right) {
-      root = t.right;
-    }
+    root = t.right;
   }
   return result;
 }
@@ -99,5 +103,19 @@ function fn() {
     }
   }
   return result;
+}
+```
+
+### 多叉树的遍历
+
+```js
+function fn(node) {
+  if (!node) return;
+  console.log(node);
+  if (node.childrens) {
+    for (let i = 0; i < node.childrens.length; i++) {
+      fn(node.childrens[i]);
+    }
+  }
 }
 ```
