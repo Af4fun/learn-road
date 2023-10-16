@@ -8,6 +8,25 @@ group:
 
 > 1 执行 ajax download 到附件流文件 <br /> 2 执行`URL.createObjectURL` 获取附件 src
 
+<<<<<<< HEAD
+=======
+举个栗子
+
+```js
+
+    const blob = new Blob([resp.data as any], { type: 'application/vnd.ms-excel' });
+    const url = window.URL.createObjectURL(blob);
+    const aLink = document.createElement('a');
+    aLink.style.display = 'none';
+    aLink.href = url;
+    aLink.setAttribute('download', "附件.xlsx");
+    document.body.appendChild(aLink);
+    aLink.click();
+    document.body.removeChild(aLink);
+    window.URL.revokeObjectURL(url);
+```
+
+>>>>>>> 0327826 (fetch)
 ## ArrayBuffer
 
 - 类数组对象 存储 2 进制文件流

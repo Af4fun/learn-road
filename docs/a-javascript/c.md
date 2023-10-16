@@ -74,3 +74,26 @@ const race = (holds = []) => {
 ```
 
 ### finally
+
+```js
+Promise.prototype.finally = function (callback) {
+  // 确保callback是一个函数
+  callback = typeof callback === 'function' ? callback : function () {};
+
+  // 返回一个新的Promise，该Promise在原Promise解决或拒绝后执行callback
+  return this.then(
+    // 解决时执行
+    function (value) {
+      return Promise.resolve(callback()).then(function () {
+        return value;
+      });
+    },
+    // 拒绝时执行
+    function (reason) {
+      return Promise.resolve(callback()).then(function () {
+        throw reason;
+      });
+    },
+  );
+};
+```
