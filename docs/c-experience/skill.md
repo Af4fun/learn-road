@@ -8,8 +8,6 @@ group:
 
 > 1 执行 ajax download 到附件流文件 <br /> 2 执行`URL.createObjectURL` 获取附件 src
 
-<<<<<<< HEAD
-=======
 举个栗子
 
 ```js
@@ -26,21 +24,20 @@ group:
     window.URL.revokeObjectURL(url);
 ```
 
->>>>>>> 0327826 (fetch)
 ## ArrayBuffer
 
 - 类数组对象 存储 2 进制文件流
 - 类型化数组的视图或一个描述缓冲数据格式的`DataView`，使用它们来读写缓冲区中的内容.
 
-```
-    // 创建缓冲区 16字节
-    var buffer = new ArrayBuffer(16);
-    // 创建视图
-    var unit8ClampedArray = new Unit8ClampedArray(buffer);
-    // 访问视图
-    for(var i = 0; i< unit8ClampedArray.length; i++){
-        unit8ClampedArray[i] = i*2
-    }
+```js
+// 创建缓冲区 16字节
+var buffer = new ArrayBuffer(16);
+// 创建视图
+var unit8ClampedArray = new Unit8ClampedArray(buffer);
+// 访问视图
+for (var i = 0; i < unit8ClampedArray.length; i++) {
+  unit8ClampedArray[i] = i * 2;
+}
 ```
 
 ## 概念
@@ -53,32 +50,29 @@ group:
 
 **canvas 污染**
 
-```
+```js
 htmlImageElement.crossOrigin = crossOriginMode;
 let crossOriginMode = htmlImageElement.crossOrigin;
 // ex:
-const imageUrl = "clock-demo-400px.png";
-const container = document.querySelector(".container");
+const imageUrl = 'clock-demo-400px.png';
+const container = document.querySelector('.container');
 
 function loadImage(url) {
   const image = new Image(200, 200);
-  image.addEventListener("load",
-    () => container.prepend(image)
-  );
+  image.addEventListener('load', () => container.prepend(image));
 
-  image.addEventListener("error", () => {
-    const errMsg = document.createElement("output");
+  image.addEventListener('error', () => {
+    const errMsg = document.createElement('output');
     errMsg.value = `Error loading image at ${url}`;
     container.append(errMsg);
   });
 
-  image.crossOrigin = "anonymous";
-  image.alt = "";
+  image.crossOrigin = 'anonymous';
+  image.alt = '';
   image.src = url;
 }
 
 loadImage(imageUrl);
-
 ```
 
 ## 跨域 canvas 污染
@@ -94,10 +88,10 @@ loadImage(imageUrl);
 2. composedPath 获取冒泡路径
    > 代码如下
 
-```
-this.$refs.app.addEventListener("touchmove", (e) => {
+```js
+this.$refs.app.addEventListener('touchmove', (e) => {
   const needScroll = (e.path || e.composedPath()).some(
-    (ele) => ele.classList && ele.classList.contains("need-scroll")
+    (ele) => ele.classList && ele.classList.contains('need-scroll'),
   );
   if (!needScroll) {
     e.preventDefault();
@@ -106,22 +100,22 @@ this.$refs.app.addEventListener("touchmove", (e) => {
 
 // OR
 window.οnlοad = function () {
-    document.getElementById("app").height = window.innerHeight + 100 + "px";
-    setTimeout(function () {
-        window.scrollTo(0, 1);
-    }, 0);
-    document.body.addEventListener(
-        "touchmove",
-        (event) => {
-            const needScroll = (e.path || e.composedPath()).some(
-                (ele) => ele.classList && ele.classList.contains("need-scroll")
-            );
-            if (!needScroll) {
-                e.preventDefault();
-            }
-        },
-        true
-    );
+  document.getElementById('app').height = window.innerHeight + 100 + 'px';
+  setTimeout(function () {
+    window.scrollTo(0, 1);
+  }, 0);
+  document.body.addEventListener(
+    'touchmove',
+    (event) => {
+      const needScroll = (e.path || e.composedPath()).some(
+        (ele) => ele.classList && ele.classList.contains('need-scroll'),
+      );
+      if (!needScroll) {
+        e.preventDefault();
+      }
+    },
+    true,
+  );
 };
 ```
 
@@ -142,7 +136,7 @@ window.οnlοad = function () {
 
 ### webpack 配置 loader
 
-```
+```json
 oneOf: [
           {
             resourceQuery: /css_modules/, // 只要匹配到了这个，就是用css modules，
