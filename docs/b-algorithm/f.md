@@ -1,6 +1,6 @@
 ---
 title: Tree （2x树）
-group:
+nav:
   title: 一些算法
 ---
 

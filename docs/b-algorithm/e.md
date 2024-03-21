@@ -1,6 +1,6 @@
 ---
 title: 鞋带公式求不规则面积
-group:
+nav:
   title: 一些算法
 ---
 

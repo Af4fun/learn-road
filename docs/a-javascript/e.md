@@ -1,6 +1,7 @@
 ---
 title: 关于时间切片
-group:
+order: 4
+nav:
   title: 前端基础
 ---
 

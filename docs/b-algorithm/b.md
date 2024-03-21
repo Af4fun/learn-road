@@ -1,6 +1,6 @@
 ---
 title: KMP 匹配子串
-group:
+nav:
   title: 一些算法
 ---
 

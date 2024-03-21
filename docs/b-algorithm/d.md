@@ -1,6 +1,6 @@
 ---
 title: 射线法判断是否处于多边形内部
-group:
+nav:
   title: 一些算法
 ---
 
@@ -27,7 +27,9 @@ function isInPath(x: number, y: number, geometry: Geometry) {
   const path = geometry.path;
   for (let i = -1, l = path.length, j = l - 1; ++i < l; j = i)
     ((path[i].y <= y && y < path[j].y) || (path[j].y <= y && y < path[i].y)) &&
-      x < ((path[j].x - path[i].x) * (y - path[i].y)) / (path[j].y - path[i].y) + path[i].x &&
+      x <
+        ((path[j].x - path[i].x) * (y - path[i].y)) / (path[j].y - path[i].y) +
+          path[i].x &&
       (c = !c);
   return c;
 }

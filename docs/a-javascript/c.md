@@ -1,6 +1,7 @@
 ---
 title: promise 增强
-group:
+order: 3
+nav:
   title: 前端基础
 ---
 
@@ -37,11 +38,17 @@ const allSettled = (fnlist) => {
 };
 
 const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
-const promise3 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promise2 = new Promise((resolve, reject) =>
+  setTimeout(reject, 100, 'foo'),
+);
+const promise3 = new Promise((resolve, reject) =>
+  setTimeout(reject, 100, 'foo'),
+);
 const promises = [promise1, promise2, promise3];
 
-allSettled(promises).then((results) => results.forEach((result) => console.log(result.status)));
+allSettled(promises).then((results) =>
+  results.forEach((result) => console.log(result.status)),
+);
 ```
 
 ### retry

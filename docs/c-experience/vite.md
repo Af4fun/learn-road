@@ -1,6 +1,6 @@
 ---
 title: 使用vite进行npm包构建
-group:
+nav:
   title: 经验
 ---
 

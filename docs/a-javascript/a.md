@@ -1,7 +1,9 @@
 ---
-title: JavaScript 基础
-group:
+title: javaScript 基础
+order: 1
+nav:
   title: 前端基础
+  order: 1
 ---
 
 ### 1.理解原型设计模式以及 JavaScript 中的原型规则
@@ -138,7 +140,8 @@ function newObject(ctor, args) {
   obj.__proto__ = ctor.prototype;
   const resp = ctor.apply(obj, args);
 
-  if ((resp && typeof resp === 'object') || typeof resp === 'function') return resp;
+  if ((resp && typeof resp === 'object') || typeof resp === 'function')
+    return resp;
 
   return obj;
 }

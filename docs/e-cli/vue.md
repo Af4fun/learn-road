@@ -1,6 +1,5 @@
 ---
-title: Vue
-group:
+nav:
   title: 框架
 ---
 

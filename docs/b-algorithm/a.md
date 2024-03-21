@@ -1,7 +1,8 @@
 ---
 title: Diff的简单实现
-group:
+nav:
   title: 一些算法
+  order: 2
 ---
 
 ### Vue 和 React 的 diff 有什么区别
@@ -31,7 +32,8 @@ class VNode {
     }
 
     this.children?.forEach((child) => {
-      const childEl = child instanceof VNode ? child.render() : document.createElement(child);
+      const childEl =
+        child instanceof VNode ? child.render() : document.createElement(child);
       el.appendChild(childEl);
     });
   }
@@ -82,7 +84,13 @@ const diffWsark = (oldNode, newNode, index, patches) => {
       }
       // Diff children. If the node has a `ignore` property, do not diff children
       if (!isIgnoreChildren(newNode)) {
-        diffChildren(oldNode.children, newNode.children, index, patches, currentPatch);
+        diffChildren(
+          oldNode.children,
+          newNode.children,
+          index,
+          patches,
+          currentPatch,
+        );
       }
     } else {
       currentPath.push({ type: REPLACE, node: newNode });

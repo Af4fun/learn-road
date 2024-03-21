@@ -1,6 +1,6 @@
 ---
 title: 动态规划
-group:
+nav:
   title: 一些算法
 ---
 

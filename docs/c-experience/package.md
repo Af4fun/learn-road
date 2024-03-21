@@ -1,7 +1,8 @@
 ---
 title: 关于包模块原理
-group:
+nav:
   title: 经验
+  order: 3
 ---
 
 ### CommonJs, ESM, UMD

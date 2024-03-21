@@ -1,6 +1,7 @@
 ---
 title: js 经验技巧
-group:
+order: 2
+nav:
   title: 前端基础
 ---
 
@@ -430,7 +431,8 @@ Vue.directive('fixedInput', (el, binding) => {
     }
     let currentPosition;
     const speed = 1; // 页面滚动距离
-    currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    currentPosition =
+      document.documentElement.scrollTop || document.body.scrollTop;
     currentPosition -= speed;
     window.scrollTo(0, currentPosition); // 页面向上滚动
     currentPosition += speed; // speed变量

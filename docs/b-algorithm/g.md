@@ -1,6 +1,6 @@
 ---
 title: 链表
-group:
+nav:
   title: 一些算法
 ---
 
