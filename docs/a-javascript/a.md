@@ -1,7 +1,7 @@
 ---
-title: 前端基础
+title: JavaScript 基础
 group:
-  title: javascript
+  title: 前端基础
 ---
 
 ### 1.理解原型设计模式以及 JavaScript 中的原型规则
@@ -208,60 +208,10 @@ chrome 进行性能分析，找出性能需要优化的点。 render：优化渲
 7. source 资源加载 缓存访问
 8. 加载 js 页面交互
 
-### 12. 哈希表原理，哈希碰撞时怎么处理？
-
-### 13. 内存回收机制？
+### 12. 内存回收机制？
 
 标记-清除算法。这是垃圾回收中最基本的方法，它通过给内存中的对象打上标记，然后回收那些没有标记的对象来实现内存回收。这种方法简单高效，但存在一些问题，如可能导致内存碎片化。<br/> 引用计数法。这种方法通过跟踪记录所有值被引用的次数来实现内存回收。当一个对象的引用次数变为 0 时，说明该对象不再被使用，可以被回收。
 
-### 14. 栈内存和堆内存的概念
+### 13. 栈内存和堆内存的概念
 
 基础的数据类型 String Boolean Number 以及 Symbol 存储在栈内存中，引用类型（对象、数组、函数）存储在堆内存中。
-
-### 15. Vue 和 React 的 diff 有什么区别
-
-Vue 和 React 的 diff 算法都是用来比较虚拟 DOM（Virtual DOM）的变化，并且尽量减少实际 DOM 操作的次数，从而提高性能。它们的主要区别在于实现方式和一些细节上的差异。
-
-1. Vue 使用了双端比较策略（又称为双向比较），即同时对比新旧节点树的头尾节点，通过最大限度地复用节点和优化渲染路径来实现高效的更新。
-
-2. React 使用了基于 Fiber 架构的协调算法，该算法通过任务切片和优先级调度来实现增量更新，使得 React 在渲染大型应用时能够更好地响应用户输入和动态变化。
-
-总的来说，Vue 的 diff 算法更倾向于通过双端比较来优化更新过程，而 React 则通过 Fiber 架构实现了更灵活和可控的更新策略。
-
-### 16. CommonJs, ESM, UMD
-
-模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。
-
-**IIFE**： 使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
-
-```js
-(function () {
-  return { data: [] };
-})();
-```
-
-**AMD**： 使用 requireJS 来编写模块化，特点：依赖必须提前声明好。
-
-```js
-define('./index.js',function(code){ // code 就是 index.js 返回的内容 })
-```
-
-**CMD**： 使用 seaJS 来编写模块化，特点：支持动态引入依赖文件。
-
-```js
-define(function (require, exports, module) {
-  var indexCode = require('./index.js');
-});
-```
-
-**CommonJS**： nodejs 中自带的模块化。
-
-`var fs = require('fs');`
-
-**UMD**：兼容 AMD，CommonJS 模块化语法。
-
-webpack(require.ensure)：webpack 2.x 版本中的代码分割。
-
-**ES** Modules： ES6 引入的模块化，支持 import 来引入另一个 js 。
-
-`import a from 'a';`

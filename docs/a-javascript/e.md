@@ -1,7 +1,7 @@
 ---
-title: 时间切片
+title: 关于时间切片
 group:
-  title: javascript
+  title: 前端基础
 ---
 
 ## 概念

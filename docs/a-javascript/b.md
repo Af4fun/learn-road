@@ -1,7 +1,7 @@
 ---
-title: 一些js的写法
+title: js 经验技巧
 group:
-  title: javascript
+  title: 前端基础
 ---
 
 ### 1. 生成 n 进制的 m 位 随机数
