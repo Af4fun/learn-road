@@ -1,0 +1,39 @@
+.box {
+  width: 500px;
+  height: 600px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  margin: 0 auto 12px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+button {
+  display: inline-flex;
+  padding: 10px;
+  margin-right: 12px;
+}
+
+.draw-menu {
+  display: none;
+  position: absolute;
+  width: 120px;
+  padding: 4px 12px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.draw-menu > .item {
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  cursor: pointer;
+}
+
+.draw-menu > .item:hover {
+  color: rgb(88, 114, 233);
+}
+
+.draw-menu > .item:last-child {
+  border-bottom: none;
+}
