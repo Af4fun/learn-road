@@ -1,3 +1,6 @@
 .dumi/tmp
 .dumi/tmp-production
+/dist
 *.yaml
+
+fador-draw
